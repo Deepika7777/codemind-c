@@ -11,12 +11,9 @@ int main()
     m=m*d;
     temp=temp/10;
     }
-    
     if(s==m)
     printf("Spy Number");
     else
     printf("Not Spy Number");
     return 0;
-    
-    
 }
