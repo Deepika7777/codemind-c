@@ -1,40 +1,30 @@
-#include <stdio.h>
-# include <string.h>
-
+#include<stdio.h>
+int isUgly(int n)
+{
+    if (n == 1)
+        return 1;
+    if (n <= 0)
+        return 0;
+    if (n % 2 == 0) {
+        return (isUgly(n / 2));
+    }
+    if (n % 3 == 0) {
+        return (isUgly(n / 3));
+    }
+    if (n % 5 == 0) {
+        return (isUgly(n / 5));
+    }
+ 
+    return 0;
+}
 int main()
 {
-int n,x=0;
-  scanf("%d",&n);
-
-      if (n <= 0) {  
-         
-        }
-       while (n != 1) 
-       {  
-            if (n % 5 == 0) 
-            {  
-                n /= 5;  
-            } 
-            else if (n % 3 == 0) 
-            {  
-                n /= 3;  
-            } 
-            else if (n % 2 == 0) 
-            {  
-                n /= 2;  
-            } 
-            else 
-            {  
-                printf("Not Ugly Number
-"); 
-                x = 1;  
-                break;  
-            }  
-        } 
-		        if (x==0)
-		        { 
-                printf("Ugly Number
-");
-                }
-                return 0;
+    int no,k;
+	scanf("%d",&no);
+	k = isUgly(no);
+    if (k == 1)
+        printf("Ugly Number");
+    else
+        printf("Not Ugly Number");
+    return 0;
 }
